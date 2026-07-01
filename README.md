@@ -41,29 +41,3 @@ Local site:
 http://127.0.0.1:5173
 ```
 
-## Production Build
-
-```bash
-npm run build
-```
-
-The compiled site is generated in `dist/`.
-
-## GitHub Pages Deployment
-
-This project includes `.github/workflows/deploy.yml`.
-
-On push to `main`, GitHub Actions will:
-
-1. Install dependencies with `npm ci`.
-2. Build the Vite project.
-3. Upload `dist/`.
-4. Deploy to GitHub Pages.
-
-Expected GitHub Pages URL:
-
-```text
-https://dev-tine.github.io/resolute-data-protection/
-```
-
-If Pages is not already enabled, configure the repository Pages source to use GitHub Actions.
