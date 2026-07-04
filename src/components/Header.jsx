@@ -1,5 +1,6 @@
-import { Menu, ShieldCheck, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "../assets/logo.png";
 import { navLinks, site } from "../data/site.js";
 import Button from "./Button.jsx";
 
@@ -28,16 +29,13 @@ export default function Header({ currentPath, onNavigate }) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
         <a
           href="/"
-          className="flex items-center gap-3 font-semibold text-navy-950 transition hover:text-navy-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy-900"
+          className="flex items-center transition hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy-900"
           onClick={(event) => {
             event.preventDefault();
             navigate("/");
           }}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-navy-900 text-white">
-            <ShieldCheck aria-hidden="true" size={20} strokeWidth={1.8} />
-          </span>
-          <span className="text-base leading-tight sm:text-lg">{site.name}</span>
+          <img src={logo} alt={site.name} className="h-10 w-auto sm:h-12" />
         </a>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">

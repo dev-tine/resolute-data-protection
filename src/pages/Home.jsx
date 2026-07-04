@@ -13,13 +13,13 @@ export default function Home({ onNavigate }) {
         <div className="mx-auto grid min-h-[calc(100vh-74px)] max-w-7xl items-center gap-14 px-5 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-              Legal, privacy, and cybersecurity advisory
+              Privacy, Cybersecurity and AI Advisory
             </p>
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
               Defending Data. Protecting People.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-steel-200 sm:text-xl">
-              Strategic guidance for cybersecurity, privacy, technology policy, and reasonable security challenges.
+              Strategic guidance for cybersecurity, privacy, technology policy, and artificial intelligence challenges
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Button href="/contact" onNavigate={onNavigate} variant="primary">
@@ -29,9 +29,6 @@ export default function Home({ onNavigate }) {
                 Explore Services
               </Button>
             </div>
-            <p className="mt-7 max-w-2xl border-l border-accent/70 pl-4 text-sm leading-6 text-steel-200">
-              Research, advisory, training, and expert support for complex data protection matters.
-            </p>
           </div>
           <SecurityVisual />
         </div>
