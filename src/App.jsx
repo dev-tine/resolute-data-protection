@@ -4,6 +4,8 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
+import PrivacyReview from "./pages/PrivacyReview.jsx";
+import TermsReview from "./pages/TermsReview.jsx";
 import { site } from "./data/site.js";
 
 const routes = {
@@ -11,8 +13,11 @@ const routes = {
   "/about": About,
   "/services": Services,
   "/contact": Contact,
+  "/privacy-review": PrivacyReview,
+  "/terms-review": TermsReview,
 };
 
+const reviewRoutes = new Set(["/privacy-review", "/terms-review"]);
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function stripBasePath(pathname) {
@@ -41,8 +46,6 @@ export default function App() {
   const [path, setPath] = useState(getPath);
 
   useEffect(() => {
-    document.title = site.title;
-
     const handlePopState = () => {
       setPath(getPath());
       window.setTimeout(() => scrollToHash(window.location.hash), 0);
@@ -53,6 +56,12 @@ export default function App() {
 
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  useEffect(() => {
+    if (!reviewRoutes.has(path)) {
+      document.title = site.title;
+    }
+  }, [path]);
 
   const Page = useMemo(() => routes[path] ?? Home, [path]);
 

@@ -24,6 +24,27 @@ export default function Footer({ onNavigate }) {
             Professional research, advisory, training, and expert support for privacy, cybersecurity, reasonable security, and technology risk matters.
           </p>
           <p className="mt-6 max-w-sm border-l border-white/15 pl-4 text-xs leading-6 text-steel-200">Prototype links and form behavior are for review only.</p>
+          <div className="mt-5 max-w-sm rounded-md border border-accent/35 bg-white/5 p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+              Legal Drafts for Review
+            </p>
+            <div className="mt-3 flex flex-col items-start gap-2">
+              <a
+                href="/privacy-review"
+                className="text-sm font-semibold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                onClick={(event) => handleNavigate(event, "/privacy-review")}
+              >
+                Privacy Policy — Draft
+              </a>
+              <a
+                href="/terms-review"
+                className="text-sm font-semibold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                onClick={(event) => handleNavigate(event, "/terms-review")}
+              >
+                Terms of Use — Draft
+              </a>
+            </div>
+          </div>
         </div>
 
         <div>
